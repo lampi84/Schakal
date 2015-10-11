@@ -9,4 +9,6 @@ $app->get('/hello/:name', function ($name) {
 });
 $app->run();
 
+/* this is a comment */
+
 ?>
