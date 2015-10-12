@@ -2,13 +2,21 @@
 
 require 'vendor/autoload.php';
 
-
 $app = new \Slim\Slim();
-$app->get('/hello/:name', function ($name) {
-    echo "Yeha, " . $name;
-});
+
+$app->get('/hello/:name', 'hello');
+
 $app->run();
 
-/* this is a comment */
+
+function hello($name){
+    $db = getDB();
+    echo "Yeha, " . $name;
+    echo "DB: " . $db->getValue("test", "count(*)");
+}
+
+
+
+
 
 ?>
